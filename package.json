@@ -1,0 +1,15 @@
+{
+  "name": "welder",
+  "version": "1.0.0",
+  "description": "API client generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mike Frey <frey.mike@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^2.4.1",
+    "request": "^2.51.0"
+  }
+}

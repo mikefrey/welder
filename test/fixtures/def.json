@@ -1,0 +1,105 @@
+[{
+  "name": "sports",
+  "baseURL": "http://localhost:8001",
+  "requestDefaults": {
+
+  },
+  "models": {
+
+    "Tournament": {
+      "endpoints": {
+
+        "fetch": {
+          "path": "/tournaments/:id",
+          "verb": "GET",
+          "arguments": {
+            "id": { "required": true }
+          }
+        },
+
+        "list": {
+          "path": "/tournaments",
+          "verb": "GET",
+          "query": {
+            "org_id": { "required": true },
+            "program_id": null,
+            "start_before": null,
+            "start_after": null
+          }
+        },
+
+        "save": {
+          "path": "/tournaments/:id?",
+          "verb": {
+            "PUT": { "when": "id" },
+            "POST": null
+          },
+          "payload": {
+            "id": null,
+            "name": { "required": true },
+            "sport_id": { "required": true },
+            "org_id": { "required": true },
+            "program_id": null,
+            "start_date": null,
+            "end_date": null,
+            "primary_venue_id": null,
+            "description": null,
+            "microsite_settings": null
+          }
+        },
+
+        "destroy": {
+          "path": "/tournaments/:id",
+          "verb": "DELETE",
+          "arguments": {
+            "id": { "required": true }
+          }
+        },
+
+        "teams": {
+          "path": "/tournaments/:tournamentID/teams",
+          "verb": "GET",
+          "arguments": {
+            "tournamentID": { "required": true },
+            "not_in_flight": null
+          },
+          "query": {
+            "not_in_flight": null
+          }
+        },
+
+        "addTeam": {
+          "path": "/tournaments/:tournamentID/add_teams/:teamID",
+          "verb": "GET",
+          "arguments": {
+            "tournamentID": { "required": true },
+            "teamID": { "required": true }
+          }
+        },
+
+        "removeTeam": {
+          "path": "/tournaments/:tournamentID/remove_teams/:teamID",
+          "verb": "DELETE",
+          "arguments": {
+            "tournamentID": { "required": true },
+            "teamID": { "required": true }
+          }
+        },
+
+        "swapTeams": {
+          "path": "/tournaments/:tournamentID/swap_teams",
+          "verb": "GET",
+          "arguments": {
+            "tournamentID": { "required": true },
+            "team_ids": { "required": true }
+          },
+          "query": {
+            "team_ids": null
+          }
+        }
+
+      }
+    }
+
+  }
+}]
