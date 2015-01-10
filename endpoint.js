@@ -19,7 +19,6 @@ _.extend(Endpoint.prototype, {
 
     var obj = this.buildRequest(options)
     return console.log(obj)
-    // return this.request(obj)
   },
 
   validateOptions: function(options) {
